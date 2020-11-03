@@ -27,7 +27,7 @@ public class Driver
 		}
 		*/
 	}
-	/*
+	
 	static void displayPlayers(Player[] ar)
 	{
 		for(int i = 0; i < ar.length; i++)
@@ -61,6 +61,29 @@ public class Driver
 		}
 		while(begin <= end);
 		return -1;
+	}
+	
+	static int binarySearchRecursive(int[] ar, int begin, int end, int age)
+	{
+		if(begin > end)
+		{
+			return -1;
+		}
+		
+		int middle = (begin + end)/2;; 
+		if(ar[middle] == age)
+		{
+			return middle;
+		}
+		else if(age < ar[middle])
+		{
+			end = middle - 1;
+		}
+		else
+		{
+			begin = middle + 1;
+		}
+		return binarySearchRecursive(ar, begin, end, age);
 	}
 	
 	static int binarySearchPlayer(Player[] ar, int age)
@@ -230,5 +253,5 @@ public class Driver
 			System.out.println(ar[i]);
 		}
 	}
-*/
+
 }
